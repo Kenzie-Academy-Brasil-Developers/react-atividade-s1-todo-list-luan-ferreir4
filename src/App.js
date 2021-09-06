@@ -1,52 +1,34 @@
-import {useState} from 'react'
+import { useState } from "react";
 
-import './App.css';
+import "./App.css";
 
-import {Form} from "./components/Form"
-import {TodoList} from "./components/TodoList"
+import { Form } from "./components/Form";
+import { TodoList } from "./components/TodoList";
 
-export const App = () => {
-
-  const [newTask, setNewTask] = useState();    
+const App = () => {
   const [todoList, setTodoList] = useState([]);
 
-  const addTodo = (newTodo) => {
-    setTodoList([newTodo]);
-  }
+  const addTodo = (newOne) => {
+    setTodoList([...todoList, newOne]);
+  };
 
   const HandleTodo = (removedTask) => {
-    const newlist = todoList.filter(task => task !== removedTask);
+    console.log(removedTask)
+
+    const newlist = todoList.filter((task) => todoList.indexOf(task,0) !== removedTask);
     setTodoList(newlist);
-  }
+    console.log(newlist)
+  };
 
   return (
     <div className="App">
       <main className="App-main">
-      <p>Adicionar nova tarefa:</p>
+        <Form addTodo={addTodo} />
 
-      <form className="mainContainer__form">
-          <input 
-              type="text"
-              value={newTask}
-              onChange={evt => setNewTask(evt.target.value)}
-          />
-
-          <button onClick={() => addTodo(newTask)}>Add todo</button>
-          
-      </form>
-
-            
-                {todoList.map(((task,index)=><p key={index}>
-                    {task}
-                    <button onClick={()=> HandleTodo(task)}>Done</button>
-                    </p>))}
-            
-
-        <Form addTodo={addTodo}/>
-
-        <TodoList todoList={todoList} handleTodo={HandleTodo}/>
-
+        <TodoList todoList={todoList} handleTodo={HandleTodo} />
       </main>
     </div>
   );
-}
+};
+
+export default App;

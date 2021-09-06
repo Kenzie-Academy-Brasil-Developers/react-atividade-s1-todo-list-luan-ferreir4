@@ -1,25 +1,21 @@
 import { useState } from "react";
 import "./style.css";
 
+export const Form = ({ addTodo }) => {
+  const [newTodo, setNewTodo] = useState("");
 
-export const Form = ({addTodo}) => {
-    // const [newTask, setNewTask] = useState();    
+  return (
+    <div className="mainContainer">
+      <p>Adicionar nova tarefa:</p>
+      <section className="mainContainer__form">
+        <input
+          type="text"
+          value={newTodo}
+          onChange={(evt) => setNewTodo(evt.target.value)}
+        />
 
-    return(
-        <div className="mainContainer">
-
-        {/* <p>Adicionar nova tarefa:</p>
-
-            <form className="mainContainer__form">
-                <input 
-                    type="text"
-                    value={newTask}
-                    onChange={(evt) => setNewTask(evt.target.value)}
-                />
-
-                <button onClick={() => addTodo(newTask)}>Add todo</button>
-                
-            </form> */}
-        </div>
-    )
-}
+        <button onClick={() => addTodo(newTodo)}>Add todo</button>
+      </section>
+    </div>
+  );
+};
