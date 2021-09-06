@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import {useState} from 'react'
+
 import './App.css';
 
-function App() {
+import {Form} from "./components/Form"
+import {TodoList} from "./components/TodoList"
+
+export const App = () => {
+
+  const [newTask, setNewTask] = useState();    
+  const [todoList, setTodoList] = useState([]);
+
+  const addTodo = (newTodo) => {
+    setTodoList([newTodo]);
+  }
+
+  const HandleTodo = (removedTask) => {
+    const newlist = todoList.filter(task => task !== removedTask);
+    setTodoList(newlist);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main className="App-main">
+      <p>Adicionar nova tarefa:</p>
+
+      <form className="mainContainer__form">
+          <input 
+              type="text"
+              value={newTask}
+              onChange={evt => setNewTask(evt.target.value)}
+          />
+
+          <button onClick={() => addTodo(newTask)}>Add todo</button>
+          
+      </form>
+
+            
+                {todoList.map(((task,index)=><p key={index}>
+                    {task}
+                    <button onClick={()=> HandleTodo(task)}>Done</button>
+                    </p>))}
+            
+
+        <Form addTodo={addTodo}/>
+
+        <TodoList todoList={todoList} handleTodo={HandleTodo}/>
+
+      </main>
     </div>
   );
 }
-
-export default App;
