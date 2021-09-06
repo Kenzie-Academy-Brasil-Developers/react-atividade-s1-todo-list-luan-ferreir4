@@ -1,61 +1,70 @@
-# 📋 Sobre a atividade
+# Getting Started with Create React App
 
-Nessa atividade vamos praticar o uso de Callbacks e Spread Operator no React e criando uma lista de afazeres.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# ℹ️ Informações úteis
+## Available Scripts
 
-### Resultado
+In the project directory, you can run:
 
-![](https://i.imgur.com/0tbgoXc.gif)
+### `yarn start`
 
-## 🖐️🍝Mão na massa!
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-*   Com seu projeto React criado, importe o hook `useState,`crie dois componentes na pasta components: `Form` e `TodoList`.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-    O Componente Form, será responsável por receber os dados inseridos no input pelo usuário, vai ter o botão "Enviar" que fará a iteração no nosso state. Por enquanto pode manter os dois componentes criados sem nenhum conteúdo.
+### `yarn test`
 
-    O Componente TodoList será responsável por renderizar a lista de tarefas e terá um botão para concluir as mesmas.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    ![](https://i.imgur.com/dPsInUS.png)
+### `yarn build`
 
-*   Bora criar as nossas funções que serão utilizadas como callbacks! Instancie um state que será a lista de todos e inicie com um array vazio.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-*   Crie uma função `addTodo`. Essa função receberá um parâmetro que seria um `newTodo` e deverá adicionar na lista o `newTodo` utilizando o Spread Operator.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-*   Crie uma função `handleTodo`. Essa função receberá um item a ser removido da lista, deveremos fazer um filtro no nosso state mostrando todos os itens que são **diferentes** do item que recebemos, após realizar o filtro no array faça o **setTodos()** passando os itens filtrados.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-*   Agora iremos criar os componentes que receberão esses **callbacks.**
+### `yarn eject`
 
-*   Instancie os dois componentes que você criou anteriormente no seu App.js
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-*   Passe por props a função `addTodo` para o componente `Form`.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-*   Passe por props o state de `todos` para o componente `TodoList` e passe também a função `handleTodo` que fará a conclusão de cada tarefa.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-*   Componente **Form:** crie um input e um botão no retorno JSX. Esse input deverá salvar o valor que está sendo digitado, utilize um state no componente para salvar esse valor através do `onChange`.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-*   Após isso, no `onClick` do botão, chame a função `addTodo` passando o state que salvou o valor do input.
+## Learn More
 
-*   Componente **TodoList**: Retorne um <ul> </ul> e dentro faça o map dos `ToDos` e retorne um <li> contendo o nome de cada `todo` e um botão que chamará a função `handleTodo` passando como parâmetro o `ToDo` atual, o mesmo que está sendo exibido. Dessa forma, quando o usuário clicar no botão, será chamado o callback que fará o filtro na lista e concluirá a tarefa =). Obs: Não esqueça da prop `key` na tag retornada no map.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## 💪Agora é com você
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-*   Estilize a aplicação
-*   Sinta-se a vontade para componentizar mais a aplicação
+### Code Splitting
 
-## 🔗 Links úteis
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-[Array.prototype.filter() - JavaScript | MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+### Analyzing the Bundle Size
 
-[Array.prototype.map() - JavaScript | MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-[Sintaxe de Espalhamento - JavaScript | MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+### Making a Progressive Web App
 
-# 💡Conhecimentos aplicados:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-*   Callbacks
-*   Spread operator
-*   State
-*   Componentes
-*   Props
-*   Eventos de usuário
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
